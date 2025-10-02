@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hi <%=user.username%>...</h1>
+    <% tasks.forEach(task => { %>
+        <% if (query.state === 'completed' || query.state === 'pending') {%>
+            <ul>Here are your <%= query.state %> tasks:
+                    <li>
+                    <%= task.content %> - <%= task.state %>
+                        </li>
+                </ul>
+        <% } else { %>
+            <ul>Here are all your tasks:
+                    <li>
+                    <%= task.content %> - <%= task.state %>
+                        </li>
+                </ul>
+        <% } %>
+    <% }); %>
+</body>
+</html>
